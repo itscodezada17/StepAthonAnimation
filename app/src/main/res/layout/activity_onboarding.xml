@@ -216,10 +216,10 @@
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabs"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="50dp"
+        android:layout_height="4dp"
         app:tabBackground="@drawable/tab_selector"
-        android:backgroundTint="@color/fade_purple_dark"
+        android:backgroundTint="@android:color/transparent"
         app:tabGravity="center"
         app:tabIndicatorHeight="0dp"
         android:layout_gravity="center_vertical"
