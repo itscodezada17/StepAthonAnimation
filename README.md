@@ -1,4 +1,6 @@
 Onboarding animation
 
-https://github.com/user-attachments/assets/1b1dbe16-6e94-48f4-919b-a894bd829d72
+https://github.com/user-attachments/assets/c456b877-01a8-4b92-aa12-41fc508b2bb2
+
+
 
