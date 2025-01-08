@@ -1,40 +1,49 @@
-package com.ujjwal.stepathonanimation.onboarding.view
+package com.ujjwal.stepathonanimation.onboarding
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.motion.widget.MotionLayout
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import androidx.lifecycle.ViewModelProvider
 import androidx.viewpager2.widget.ViewPager2
+import com.google.android.material.tabs.TabLayoutMediator
 import com.ujjwal.stepathonanimation.R
 import com.ujjwal.stepathonanimation.databinding.ActivityOnboardingBinding
+import com.ujjwal.stepathonanimation.onboarding.adapter.OnboardingViewPagerAdapter
+import com.ujjwal.stepathonanimation.onboarding.utils.EventObserver
 
 class OnboardingActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityOnboardingBinding
-    private lateinit var viewModel: MainActivityViewModel
+    private var _binding: ActivityOnboardingBinding ? = null
+    private val binding get() = _binding!!
+    private val viewModel by viewModels<OnBoardingViewModel>()
     private lateinit var viewPager: ViewPager2
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityOnboardingBinding.inflate(layoutInflater)
+        _binding = ActivityOnboardingBinding.inflate(layoutInflater)
         enableEdgeToEdge()
         setContentView(binding.root)
+        onViewCreated()
     }
 
     private fun onViewCreated() {
-        viewModel = ViewModelProvider(this)[MainActivityViewModel::class.java]
         initClickListeners()
         initObservers()
         initDots()
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
+    }
+
     private fun initDots() {
-        viewPager = binding.viewPageMock
-        viewPager.adapter = MockViewPagerAdapter()
-        binding.wormDot.attachTo(viewPager)
+        viewPager = binding.viewPager
+        viewPager.adapter = OnboardingViewPagerAdapter()
+
+//        TabLayoutMediator(binding.tabDots, viewPager) { tab, position ->
+//        }.attach()
     }
 
     private fun initObservers() {

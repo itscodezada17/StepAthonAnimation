@@ -1,4 +1,4 @@
-package com.ujjwal.stepathonanimation.onboarding.utils
+package com.ujjwal.stepathonanimation.ViewUtil
 
 import android.content.Context
 import android.graphics.Canvas

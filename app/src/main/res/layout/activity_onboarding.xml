@@ -1,10 +1,282 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".onboarding.view.OnboardingActivity">
+    app:layoutDescription="@xml/onboarding_scene"
+    tools:context=".onboarding.OnboardingActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.20" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.75" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.70" />
+
+    <View
+        android:id="@+id/firstBg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/gradient_first"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/secondBg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/gradient_second"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/thirdBg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/gradient_third"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.ujjwal.stepathonanimation.ViewUtil.TextArc
+        android:id="@+id/arcText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:foregroundGravity="center"
+        android:shadowColor="@color/white"
+        app:center_angle="-90"
+        app:font_family="@font/montserrat_bold"
+        app:layout_constraintEnd_toEndOf="@id/thonImg"
+        app:layout_constraintStart_toStartOf="@id/thonImg"
+        app:layout_constraintTop_toTopOf="parent"
+        app:padding_top="20"
+        app:radius="180dp"
+        app:shadow_color="@color/white"
+        app:shadow_radius="35"
+        app:shadow_x="0"
+        app:shadow_y="0"
+        app:text="Step-a-Thon"
+        app:text_color="@color/white"
+        app:text_size="30sp" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/shinerBg"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:rotation="90"
+        android:src="@drawable/shiner"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/thonImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/robot"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/trophyImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/trophy"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/giftsImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/gifts"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animation_view"
+        android:layout_width="@dimen/dimen_100"
+        android:layout_height="@dimen/dimen_100"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="@dimen/dimen_150"
+        app:layout_constraintStart_toStartOf="@id/guideline1"
+        app:layout_constraintTop_toTopOf="@id/guideline1"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/challenges_star"
+        tools:ignore="MissingConstraints" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animation_view2"
+        android:layout_width="@dimen/dimen_100"
+        android:layout_height="@dimen/dimen_100"
+        android:layout_marginEnd="20dp"
+        android:rotation="90"
+        app:layout_constraintBottom_toBottomOf="@id/guideline2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/challenges_star"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/head1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_medium"
+        android:gravity="center"
+        android:paddingHorizontal="@dimen/dimen_40"
+        android:text="Step Up and Score"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guideline3" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/head2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_medium"
+        android:gravity="center"
+        android:paddingHorizontal="@dimen/dimen_40"
+        android:text="Claim the Throne"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guideline3" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/head3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_medium"
+        android:gravity="center"
+        android:paddingHorizontal="@dimen/dimen_40"
+        android:text="Score Big!!"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guideline3" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/sub1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat"
+        android:gravity="center"
+        android:paddingHorizontal="@dimen/dimen_40"
+        android:text="Join the Race, Lace Up, and Embrace Health!"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/head1" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/sub2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_medium"
+        android:gravity="center"
+        android:paddingHorizontal="@dimen/dimen_40"
+        android:text="Compare with your collegeagues for the Top Ranks"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/head1" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/sub3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_medium"
+        android:gravity="center"
+        android:paddingHorizontal="@dimen/dimen_40"
+        android:text="Victory Unlocks Spectacular Vouchers, Cashbacks, and Beyond"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/head1" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonNxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dimen_30"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="@dimen/dimen_40"
+        android:background="@drawable/rounded_corners"
+        android:paddingVertical="15dp"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sub3"
+        app:layout_constraintVertical_bias="1" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+<!--    <FrameLayout-->
+<!--        android:id="@+id/layoutIntro"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent">-->
+
+<!--        <androidx.viewpager2.widget.ViewPager2-->
+<!--            android:id="@+id/viewPager"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent" />-->
+<!--        <com.google.android.material.tabs.TabLayout-->
+<!--            android:id="@+id/tab_dots"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="bottom"-->
+<!--            app:tabBackground="@drawable/tab_page_selecter"-->
+<!--            app:tabGravity="center"-->
+<!--            android:background="@color/white"-->
+<!--            app:tabIndicatorHeight="0dp"-->
+<!--            app:tabPaddingEnd="@dimen/dimen_10"-->
+<!--            app:tabPaddingStart="@dimen/dimen_10"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/sub3"/>-->
+<!--    </FrameLayout>-->
+
+
+</androidx.constraintlayout.motion.widget.MotionLayout>
