@@ -1,11 +1,14 @@
 package com.ujjwal.stepathonanimation.onboarding
 
+import android.content.res.ColorStateList
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.motion.widget.MotionLayout
+import androidx.core.content.ContextCompat
 import androidx.viewpager2.widget.ViewPager2
+import com.google.android.material.tabs.TabLayoutMediator
 import com.ujjwal.stepathonanimation.R
 import com.ujjwal.stepathonanimation.databinding.ActivityOnboardingBinding
 import com.ujjwal.stepathonanimation.onboarding.adapter.OnboardingViewPagerAdapter
@@ -40,16 +43,18 @@ class OnboardingActivity : AppCompatActivity() {
     private fun initDots() {
         viewPager = binding.viewPager
         viewPager.adapter = OnboardingViewPagerAdapter()
-
+        TabLayoutMediator(binding.tabs, viewPager) { tab, position -> }.attach()
     }
 
     private fun initObservers() {
+        val colorList = listOf( ContextCompat.getColor(this, R.color.fade_purple_dark), ContextCompat.getColor(this, R.color.fade_blue_dark), ContextCompat.getColor(this, R.color.fade_red_dark))
         viewModel.pageNumber.observe(this, EventObserver {
             viewPager.currentItem = it
             binding.buttonNxt.text = when (it) {
                 2 -> "Let's Go!"
                 else -> "Next"
             }
+            binding.tabs.backgroundTintList = ColorStateList.valueOf(colorList[it])
         })
     }
 

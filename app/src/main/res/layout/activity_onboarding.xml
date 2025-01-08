@@ -214,6 +214,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/head1" />
 
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:tabBackground="@drawable/tab_selector"
+        android:backgroundTint="@color/fade_purple_dark"
+        app:tabGravity="center"
+        app:tabIndicatorHeight="0dp"
+        android:layout_gravity="center_vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sub3"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonNxt"
@@ -229,7 +241,7 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/sub3"
+        app:layout_constraintTop_toBottomOf="@id/tabs"
         app:layout_constraintVertical_bias="1" />
 
     <androidx.viewpager2.widget.ViewPager2
