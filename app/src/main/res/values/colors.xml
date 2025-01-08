@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="fade_purple_light">#5335D3</color>
+    <color name="fade_purple_dark">#3A2CA0</color>
+
+    <color name="fade_blue_light">#42DEC5</color>
+    <color name="fade_blue_dark">#3484DE</color>
+
+    <color name="fade_red_light">#FF754C</color>
+    <color name="fade_red_dark">#E31E71</color>
+
+    <color name="transparent">#CFC8FF</color>
+
+
+
+</resources>
