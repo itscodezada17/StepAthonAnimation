@@ -53,27 +53,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.ujjwal.stepathonanimation.ViewUtil.TextArc
-        android:id="@+id/arcText"
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivStepaThon"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="70dp"
-        android:foregroundGravity="center"
-        android:shadowColor="@color/white"
-        app:center_angle="-90"
-        app:font_family="@font/montserrat_bold"
+        android:src="@drawable/bg_onboarding_stepathon"
         app:layout_constraintEnd_toEndOf="@id/thonImg"
         app:layout_constraintStart_toStartOf="@id/thonImg"
-        app:layout_constraintTop_toTopOf="parent"
-        app:padding_top="20"
-        app:radius="180dp"
-        app:shadow_color="@color/white"
-        app:shadow_radius="35"
-        app:shadow_x="0"
-        app:shadow_y="0"
-        app:text="Step-a-Thon"
-        app:text_color="@color/white"
-        app:text_size="30sp" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/shinerBg"
@@ -252,31 +240,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
-<!--    <FrameLayout-->
-<!--        android:id="@+id/layoutIntro"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent">-->
-
-<!--        <androidx.viewpager2.widget.ViewPager2-->
-<!--            android:id="@+id/viewPager"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent" />-->
-<!--        <com.google.android.material.tabs.TabLayout-->
-<!--            android:id="@+id/tab_dots"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_gravity="bottom"-->
-<!--            app:tabBackground="@drawable/tab_page_selecter"-->
-<!--            app:tabGravity="center"-->
-<!--            android:background="@color/white"-->
-<!--            app:tabIndicatorHeight="0dp"-->
-<!--            app:tabPaddingEnd="@dimen/dimen_10"-->
-<!--            app:tabPaddingStart="@dimen/dimen_10"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toBottomOf="@id/sub3"/>-->
-<!--    </FrameLayout>-->
 
 
 </androidx.constraintlayout.motion.widget.MotionLayout>

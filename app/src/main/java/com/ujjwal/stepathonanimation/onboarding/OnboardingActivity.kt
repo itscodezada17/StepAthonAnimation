@@ -6,7 +6,6 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.motion.widget.MotionLayout
 import androidx.viewpager2.widget.ViewPager2
-import com.google.android.material.tabs.TabLayoutMediator
 import com.ujjwal.stepathonanimation.R
 import com.ujjwal.stepathonanimation.databinding.ActivityOnboardingBinding
 import com.ujjwal.stepathonanimation.onboarding.adapter.OnboardingViewPagerAdapter
@@ -42,8 +41,6 @@ class OnboardingActivity : AppCompatActivity() {
         viewPager = binding.viewPager
         viewPager.adapter = OnboardingViewPagerAdapter()
 
-//        TabLayoutMediator(binding.tabDots, viewPager) { tab, position ->
-//        }.attach()
     }
 
     private fun initObservers() {
